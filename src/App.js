@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
@@ -12,10 +12,16 @@ const App = () => {
   }, [])
 
   const initReactGa = () => {
-    ReactGA.initialize([{trackingId:'G-R8518JG1Y4'}], {debug:true });
+    ReactGA.initialize([{ trackingId: 'G-R8518JG1Y4' }], { debug: true });
     ReactGA.send({ hitType: "pageview", page: window.location.pathname, title: "Custom Title" });
-    
-    
+    ReactGA.event({
+      category: "custom category",
+      action: "custom action",
+      label: "custom label", // optional
+    });
+
+
+
   }
   return (
     <div>
