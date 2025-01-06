@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import ReactGA from 'react-ga';
 
 const App = () => {
+  useEffect(() => {
+    initReactGa();
+
+  }, [])
+
+  const initReactGa = () => {
+    ReactGA.initialize('G-R8518JG1Y4', {debug:true });
+    ReactGA.pageview();
+    
+    
+  }
   return (
     <div>
       {/* Navigation Links */}
