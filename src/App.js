@@ -13,7 +13,7 @@ const App = () => {
 
   const initReactGa = () => {
     ReactGA.initialize([{trackingId:'G-R8518JG1Y4'}], {debug:true });
-    ReactGA.pageview();
+    ReactGA.send({ hitType: "pageview", page: window.location.pathname, title: "Custom Title" });
     
     
   }
