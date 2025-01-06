@@ -3,7 +3,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 const App = () => {
   useEffect(() => {
@@ -12,7 +12,7 @@ const App = () => {
   }, [])
 
   const initReactGa = () => {
-    ReactGA.initialize('G-R8518JG1Y4', {debug:true });
+    ReactGA.initialize([{trackingId:'G-R8518JG1Y4'}], {debug:true });
     ReactGA.pageview();
     
     
